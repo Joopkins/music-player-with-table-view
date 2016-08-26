@@ -9,11 +9,25 @@
 import UIKit
 
 class VideoViewController: UIViewController {
+    
+    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    private var _musicModel: MusicCellModel!
+    
+    var musicModel: MusicCellModel {
+        get {
+            return _musicModel
+        } set {
+            _musicModel = newValue
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        titleLabel.text = musicModel.videoTitle
+        webView.loadHTMLString(musicModel.videoTitle, baseURL: nil)
     }
 
     override func didReceiveMemoryWarning() {

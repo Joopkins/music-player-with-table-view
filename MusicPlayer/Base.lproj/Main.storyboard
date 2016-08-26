@@ -147,14 +147,29 @@
                                     <constraint firstAttribute="height" constant="197" id="gEZ-6y-5hf"/>
                                 </constraints>
                             </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4D-zb-zoM">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="NXZ-1a-4dy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="StillTime-Regular" family="Still Time" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.74250801282051282" green="0.74250801282051282" blue="0.74250801282051282" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="S4D-zb-zoM" firstAttribute="leading" secondItem="HDr-mN-gxa" secondAttribute="leadingMargin" constant="5" id="Iva-XB-ZnB"/>
                             <constraint firstAttribute="trailing" secondItem="Up5-Ih-lFa" secondAttribute="trailing" id="MYs-7K-bwP"/>
                             <constraint firstItem="Up5-Ih-lFa" firstAttribute="top" secondItem="HDr-mN-gxa" secondAttribute="top" id="RAY-vz-YyO"/>
                             <constraint firstItem="Up5-Ih-lFa" firstAttribute="leading" secondItem="HDr-mN-gxa" secondAttribute="leading" id="WcW-C7-X33"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="S4D-zb-zoM" secondAttribute="trailing" constant="5" id="fLU-7Z-M55"/>
+                            <constraint firstItem="S4D-zb-zoM" firstAttribute="top" secondItem="Up5-Ih-lFa" secondAttribute="bottom" constant="50" id="sQh-nc-AKJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="S4D-zb-zoM" id="OuW-Uf-Lai"/>
+                        <outlet property="webView" destination="Up5-Ih-lFa" id="n6b-GF-5Zv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhS-2v-LiY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

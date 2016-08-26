@@ -51,6 +51,20 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return musicCellData.count
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let musicModel = musicCellData[indexPath.row]
+        
+        performSegue(withIdentifier: "VideoViewController", sender: musicModel)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let destination = segue.destination as? VideoViewController {
+            if let music = sender as? MusicCellModel {
+                destination.musicModel = music
+            }
+        }
+    }
 
 
 }

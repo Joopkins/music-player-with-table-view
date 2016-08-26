@@ -20,6 +20,18 @@ class MusicCell: UITableViewCell {
 
     func updateUI(musicCellModel: MusicCellModel) {
         videoTitleLabel.text = musicCellModel.videoTitle
+        
+        let url = URL(string: musicCellModel.imageURL)!
+        DispatchQueue.global().async {
+            do {
+                let data = try Data(contentsOf: url)
+                DispatchQueue.global().sync {
+                    self.videoPreviewImage.image = UIImage(data: data)
+                }
+            } catch {
+                
+            }
+        }
     }
 
 }
